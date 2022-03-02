@@ -1,0 +1,31 @@
+
+' - '  = to do list
+' * ' = general idea to do in the future
+
+RateYourWaifu(0.8.1.3):
+- Add last easter eggs.
+  + Add sounds to them.
+- Make some last adjustments to Rating.
+
+LeOS(0.4.0.1):
+-Make the menu better to the eye.
+* More Projects
+
+
+Cursor Draw(0.5.1.1):
+
+
+[UNANNOUNCED CHANGELOG]
+
+
+
+LeOS(0.4.0.2):
+
+- tweaked lobby selection
+
+
+Snake(NO UPDATE YET)
+- Made Start to Snake
+* User CD as reference
+* Create Start
+---> LeOS intro has been disabled for faster load

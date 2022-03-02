@@ -1,0 +1,72 @@
+# Project: LeOS
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = LeOS_private.res
+OBJ      = ../RateYourWaifu/RYWData/RYWfunctions.o ../RateYourWaifu/RYWData/RYWmain.o LeOSData/main.o LeOSData/mainFunctions.o LeOSData/projectHeader.o ../cursorDraw/cdData/cdFunctions.o ../cursorDraw/cdData/cursorDraw.o ../Snake/snakeData/Snake_Main.o ../DeepBeeps/DBData/DBFunctions.o ../DeepBeeps/DBData/DBmain.o ../Snake/snakeData/Snake.o ../Snake/snakeData/Snake_Window.o ../XnOs/xnos.o ../XnOs/xnos_main.o $(RES)
+LINKOBJ  = ../RateYourWaifu/RYWData/RYWfunctions.o ../RateYourWaifu/RYWData/RYWmain.o LeOSData/main.o LeOSData/mainFunctions.o LeOSData/projectHeader.o ../cursorDraw/cdData/cdFunctions.o ../cursorDraw/cdData/cursorDraw.o ../Snake/snakeData/Snake_Main.o ../DeepBeeps/DBData/DBFunctions.o ../DeepBeeps/DBData/DBmain.o ../Snake/snakeData/Snake.o ../Snake/snakeData/Snake_Window.o ../XnOs/xnos.o ../XnOs/xnos_main.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc "-lwinmm" "C:/Program Files (x86)/Dev-Cpp/zlib/zlib.h" -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = LeOS.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3 -std=c++11
+CFLAGS   = $(INCS) -m32 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+../RateYourWaifu/RYWData/RYWfunctions.o: ../RateYourWaifu/RYWData/RYWfunctions.cpp
+	$(CPP) -c ../RateYourWaifu/RYWData/RYWfunctions.cpp -o ../RateYourWaifu/RYWData/RYWfunctions.o $(CXXFLAGS)
+
+../RateYourWaifu/RYWData/RYWmain.o: ../RateYourWaifu/RYWData/RYWmain.cpp
+	$(CPP) -c ../RateYourWaifu/RYWData/RYWmain.cpp -o ../RateYourWaifu/RYWData/RYWmain.o $(CXXFLAGS)
+
+LeOSData/main.o: LeOSData/main.cpp
+	$(CPP) -c LeOSData/main.cpp -o LeOSData/main.o $(CXXFLAGS)
+
+LeOSData/mainFunctions.o: LeOSData/mainFunctions.cpp
+	$(CPP) -c LeOSData/mainFunctions.cpp -o LeOSData/mainFunctions.o $(CXXFLAGS)
+
+LeOSData/projectHeader.o: LeOSData/projectHeader.cpp
+	$(CPP) -c LeOSData/projectHeader.cpp -o LeOSData/projectHeader.o $(CXXFLAGS)
+
+../cursorDraw/cdData/cdFunctions.o: ../cursorDraw/cdData/cdFunctions.cpp
+	$(CPP) -c ../cursorDraw/cdData/cdFunctions.cpp -o ../cursorDraw/cdData/cdFunctions.o $(CXXFLAGS)
+
+../cursorDraw/cdData/cursorDraw.o: ../cursorDraw/cdData/cursorDraw.cpp
+	$(CPP) -c ../cursorDraw/cdData/cursorDraw.cpp -o ../cursorDraw/cdData/cursorDraw.o $(CXXFLAGS)
+
+../Snake/snakeData/Snake_Main.o: ../Snake/snakeData/Snake_Main.cpp
+	$(CPP) -c ../Snake/snakeData/Snake_Main.cpp -o ../Snake/snakeData/Snake_Main.o $(CXXFLAGS)
+
+../DeepBeeps/DBData/DBFunctions.o: ../DeepBeeps/DBData/DBFunctions.cpp
+	$(CPP) -c ../DeepBeeps/DBData/DBFunctions.cpp -o ../DeepBeeps/DBData/DBFunctions.o $(CXXFLAGS)
+
+../DeepBeeps/DBData/DBmain.o: ../DeepBeeps/DBData/DBmain.cpp
+	$(CPP) -c ../DeepBeeps/DBData/DBmain.cpp -o ../DeepBeeps/DBData/DBmain.o $(CXXFLAGS)
+
+../Snake/snakeData/Snake.o: ../Snake/snakeData/Snake.cpp
+	$(CPP) -c ../Snake/snakeData/Snake.cpp -o ../Snake/snakeData/Snake.o $(CXXFLAGS)
+
+../Snake/snakeData/Snake_Window.o: ../Snake/snakeData/Snake_Window.cpp
+	$(CPP) -c ../Snake/snakeData/Snake_Window.cpp -o ../Snake/snakeData/Snake_Window.o $(CXXFLAGS)
+
+../XnOs/xnos.o: ../XnOs/xnos.cpp
+	$(CPP) -c ../XnOs/xnos.cpp -o ../XnOs/xnos.o $(CXXFLAGS)
+
+../XnOs/xnos_main.o: ../XnOs/xnos_main.cpp
+	$(CPP) -c ../XnOs/xnos_main.cpp -o ../XnOs/xnos_main.o $(CXXFLAGS)
+
+LeOS_private.res: LeOS_private.rc ../RateYourWaifu/RYWsound.rc
+	$(WINDRES) -i LeOS_private.rc -F pe-i386 --input-format=rc -o LeOS_private.res -O coff 
+

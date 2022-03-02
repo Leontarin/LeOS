@@ -1,0 +1,31 @@
+# Project: cursorDraw
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = cursorDraw.o cdFunctions.o
+LINKOBJ  = cursorDraw.o cdFunctions.o
+LIBS     = -L"G:/Programs/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"G:/Programs/Dev-Cpp/MinGW64/include" -I"G:/Programs/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"G:/Programs/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"G:/Programs/Dev-Cpp/MinGW64/include" -I"G:/Programs/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"G:/Programs/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"G:/Programs/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = cursorDraw.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+cursorDraw.o: cursorDraw.cpp
+	$(CPP) -c cursorDraw.cpp -o cursorDraw.o $(CXXFLAGS)
+
+cdFunctions.o: cdFunctions.cpp
+	$(CPP) -c cdFunctions.cpp -o cdFunctions.o $(CXXFLAGS)
